@@ -45,14 +45,11 @@ def analyze_reviews(place_name):
 
     crew = Crew(agents=[data_collector, advisor], tasks=[task, task2], verbose=1)
 
-    # Kick off the tasks
     results = crew.kickoff()
 
-    # Process the outputs
     data_collector_output = task.output  
     advisor_output = task2.output
 
-    # Convert outputs to strings (if they are lists or other objects)
     data_collector_output_str = '\n'.join(data_collector_output) if isinstance(data_collector_output, list) else str(data_collector_output)
     advisor_output_str = '\n'.join(advisor_output) if isinstance(advisor_output, list) else str(advisor_output)
 
@@ -62,14 +59,12 @@ place_name = ""
 review_gist = ""
 change_suggestions = ""
 
-# Function to handle form submission and trigger review analysis
 def on_submit(state):
     global place_name
     data_collector_output, advisor_output = analyze_reviews(state.place_name)
     state.review_gist = data_collector_output
     state.change_suggestions = advisor_output
 
-# Define the page layout
 page = """
 # Review Analysis
 
@@ -86,6 +81,5 @@ Please enter the place name (e.g., Gordhan Thal Ahmedabad):
 <|{change_suggestions}|text|>
 """
 
-# Run the GUI
 gui = tp.Gui(page)
 gui.run()
