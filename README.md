@@ -76,9 +76,4 @@ You need the following API keys to run this project:
 - `SERPER_API_KEY`: For retrieving reviews from Google Maps.
 - `GROQ_API_KEY`: For utilizing the LLM models.
 
-## 🎓 Learnings
-
-- Mastered data collection and analysis using AI agents.
-- Understood how to integrate sentiment analysis to extract actionable business insights.
-- Gained proficiency in building interactive, intelligent agents using the CrewAI framework.
 
